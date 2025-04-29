@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
-    <footer className="bg-dark-blue text-white px-10">
-      <div className="footer sm:footer-horizontal p-10">
+    <footer className="bg-dark-blue text-white p-10">
+      <div className="footer sm:footer-horizontal">
         <aside className="flex gap-1">
           <svg
             width="21"
@@ -60,11 +60,11 @@ export default function Footer() {
         </nav>
       </div>
 
-      <hr className="border-gray-700 mx-10" />
+      <hr className="border-gray-700 mt-10 mb-5" />
 
-      <div className="flex justify-between h-fit p-10">
+      <div className="flex items-center justify-between flex-wrap gap-5">
         <p>uteach @ 2023. All rights reserved.</p>
-        <ul className="flex gap-5">
+        <ul className="flex justify-between gap-5 py-3">
           <li>Terms</li>
           <li>Privacy</li>
           <li>Contact</li>
@@ -73,11 +73,19 @@ export default function Footer() {
             EN
           </li>
           <li className="flex gap-1">
-            <img src="src/assets/icons/euro.svg" alt="Global" />
+            <img
+              src="src/assets/icons/euro.svg"
+              alt="Global"
+              className="hidden md:inline"
+            />
             EUR
           </li>
           <li>
-            <img src="src/assets/icons/accessibility.svg" alt="Global" />
+            <img
+              src="src/assets/icons/accessibility.svg"
+              alt="Global"
+              width={30}
+            />
           </li>
         </ul>
       </div>
