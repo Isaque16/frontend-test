@@ -2,15 +2,32 @@
 @plugin "daisyui";
 
 @theme {
-    /* Typography */
-    --font-body: Roboto, sans-serif;
-    --font-wheight-title: 800;
-    --font-weight-text: 400;
+  /* Typography */
+  --font-body: Roboto, sans-serif;
+  --font-weight-title: 800;
+  --font-weight-semibold: 500;
+  --font-weight-text: 400;
 
-    /* Color palette */
-    --color-blue-gray: #475569;
-    --color-orange-strong: #EA580C;
-    --color-orange-light: #FB923C;
-    --color-yellow-strong: #FACC15;
-    --color-dark-blue: #0F172A;
+  /* Color palette */
+  --color-blue-gray: #475569;
+  --color-orange-strong: #ea580c;
+  --color-orange-light: #fb923c;
+  --color-yellow-strong: #facc15;
+  --color-dark-blue: #0f172a;
+}
+
+@utility btn-ghost {
+  &:hover {
+    @apply bg-orange-strong;
+  }
+}
+
+@utility footer-title {
+  @apply opacity-100;
+}
+
+@layer components {
+  .hover-underline {
+    @apply relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-orange-strong after:scale-x-0 after:origin-left hover:after:scale-x-100 after:transition-transform after:duration-300;
+  }
 }
