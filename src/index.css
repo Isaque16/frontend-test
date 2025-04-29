@@ -1,0 +1,16 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+@theme {
+    /* Typography */
+    --font-body: Roboto, sans-serif;
+    --font-wheight-title: 800;
+    --font-weight-text: 400;
+
+    /* Color palette */
+    --color-blue-gray: #475569;
+    --color-orange-strong: #EA580C;
+    --color-orange-light: #FB923C;
+    --color-yellow-strong: #FACC15;
+    --color-dark-blue: #0F172A;
+}
