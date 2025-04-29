@@ -68,11 +68,11 @@ export default function Footer() {
           <li>Terms</li>
           <li>Privacy</li>
           <li>Contact</li>
-          <li className="flex gap-1">
+          <li className="flex items-center gap-1">
             <img src="src/assets/icons/global.svg" alt="Global" />
             EN
           </li>
-          <li className="flex gap-1">
+          <li className="flex items-center gap-1">
             <img
               src="src/assets/icons/euro.svg"
               alt="Global"
