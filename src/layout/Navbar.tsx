@@ -8,23 +8,31 @@ export default function Navbar() {
       <div className="navbar-start gap-10">
         <div className="flex gap-1">
           <img src="/logo.svg" alt="Teach logo" />
-          <a className="text-3xl font-title hover:cursor-pointer">teach</a>
+          <a href="#" className="text-3xl font-title hover:cursor-pointer">
+            teach
+          </a>
         </div>
 
-        <ul className="hidden md:flex menu menu-horizontal px-1 text-lg font-semibold gap-10">
+        <ul className="hidden lg:flex menu menu-horizontal px-1 text-lg font-semibold gap-10">
           <li>
-            <a className="hover-underline">Products</a>
+            <a href="#" className="hover-underline">
+              Products
+            </a>
           </li>
           <li>
-            <a className="hover-underline">Solutions</a>
+            <a href="#" className="hover-underline">
+              Solutions
+            </a>
           </li>
           <li>
-            <a className="hover-underline">Pricing</a>
+            <a href="#" className="hover-underline">
+              Pricing
+            </a>
           </li>
           <li>
             <details className="hover-underline">
               <summary>Resources</summary>
-              <ul className="p-2">
+              <ul className="p-2 bg-white">
                 <li>
                   <a>Submenu 1</a>
                 </li>
@@ -37,14 +45,19 @@ export default function Navbar() {
         </ul>
       </div>
 
-      <div className="navbar-end gap-3 hidden md:flex">
-        <a className="btn btn-ghost font-semibold">Log In</a>
-        <a className="btn btn-ghost font-semibold py-3 px-6 border-2 border-black">
+      <div className="navbar-end gap-3 hidden lg:flex">
+        <a href="#" className="btn btn-ghost font-semibold">
+          Log In
+        </a>
+        <a
+          href="#"
+          className="btn btn-ghost font-semibold py-3 px-6 border-2 border-black"
+        >
           Sign Up Now
         </a>
       </div>
 
-      <div className="navbar-end md:hidden">
+      <div className="navbar-end lg:hidden">
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="btn btn-square btn-ghost"
@@ -67,16 +80,22 @@ export default function Navbar() {
       </div>
 
       {isOpen && (
-        <div className="absolute top-20 left-0 right-0 bg-white shadow-md p-5 z-50 md:hidden">
+        <div className="absolute top-20 left-0 right-0 bg-white shadow-md p-5 z-50 lg:hidden">
           <ul className="menu w-full">
             <li>
-              <a className="hover-underline">Products</a>
+              <a href="#" className="hover-underline">
+                Products
+              </a>
             </li>
             <li>
-              <a className="hover-underline">Solutions</a>
+              <a href="#" className="hover-underline">
+                Solutions
+              </a>
             </li>
             <li>
-              <a className="hover-underline">Pricing</a>
+              <a href="#" className="hover-underline">
+                Pricing
+              </a>
             </li>
             <li>
               <details className="hover-underline">
@@ -92,8 +111,13 @@ export default function Navbar() {
               </details>
             </li>
             <div className="flex flex-col gap-3 mt-4">
-              <a className="btn btn-ghost font-semibold">Log In</a>
-              <a className="btn btn-ghost font-semibold py-3 px-6 border-2 border-black">
+              <a href="#" className="btn btn-ghost font-semibold">
+                Log In
+              </a>
+              <a
+                href="#"
+                className="btn btn-ghost font-semibold py-3 px-6 border-2 border-black"
+              >
                 Sign Up Now
               </a>
             </div>

@@ -20,11 +20,19 @@ export default function Footer() {
         </aside>
         <nav className="flex flex-col gap-5">
           <h6 className="footer-title">Products</h6>
-          <a className="link-hover font-light">Pricing</a>
-          <a className="link-hover font-light">Overview</a>
-          <a className="link-hover font-light">Browse</a>
+          <a href="#" className="link-hover font-light">
+            Pricing
+          </a>
+          <a href="#" className="link-hover font-light">
+            Overview
+          </a>
+          <a href="#" className="link-hover font-light">
+            Browse
+          </a>
           <div className="flex gap-2">
-            <a className="link-hover font-light">Accessibility</a>
+            <a href="#" className="link-hover font-light">
+              Accessibility
+            </a>
             <span className="px-2 bg-white text-purple-500 rounded-sm">
               Beta
             </span>
@@ -32,42 +40,86 @@ export default function Footer() {
         </nav>
         <nav className="flex flex-col gap-5">
           <h6 className="footer-title">Solutions</h6>
-          <a className="link-hover font-light">Brainstorming</a>
-          <a className="link-hover font-light">Ideation</a>
-          <a className="link-hover font-light">Wireframing</a>
-          <a className="link-hover font-light">Research</a>
+          <a href="#" className="link-hover font-light">
+            Brainstorming
+          </a>
+          <a href="#" className="link-hover font-light">
+            Ideation
+          </a>
+          <a href="#" className="link-hover font-light">
+            Wireframing
+          </a>
+          <a href="#" className="link-hover font-light">
+            Research
+          </a>
         </nav>
         <nav className="flex flex-col gap-5">
           <h6 className="footer-title">Resources</h6>
-          <a className="link-hover font-light">Help Center</a>
-          <a className="link-hover font-light">Blog</a>
-          <a className="link-hover font-light">Tutorials</a>
-          <a className="link-hover font-light">FAQs</a>
+          <a href="#" className="link-hover font-light">
+            Help Center
+          </a>
+          <a href="#" className="link-hover font-light">
+            Blog
+          </a>
+          <a href="#" className="link-hover font-light">
+            Tutorials
+          </a>
+          <a href="#" className="link-hover font-light">
+            FAQs
+          </a>
         </nav>
         <nav className="flex flex-col gap-5">
           <h6 className="footer-title">Support</h6>
-          <a className="link-hover font-light">Contact Us</a>
-          <a className="link-hover font-light">Developers</a>
-          <a className="link-hover font-light">Documentation</a>
-          <a className="link-hover font-light">Integrations</a>
+          <a href="#" className="link-hover font-light">
+            Contact Us
+          </a>
+          <a href="#" className="link-hover font-light">
+            Developers
+          </a>
+          <a href="#" className="link-hover font-light">
+            Documentation
+          </a>
+          <a href="#" className="link-hover font-light">
+            Integrations
+          </a>
         </nav>
         <nav className="flex flex-col gap-5">
           <h6 className="footer-title">Company</h6>
-          <a className="link-hover font-light">About</a>
-          <a className="link-hover font-light">Press</a>
-          <a className="link-hover font-light">Events</a>
-          <a className="link-hover font-light">Request Demo</a>
+          <a href="#" className="link-hover font-light">
+            About
+          </a>
+          <a href="#" className="link-hover font-light">
+            Press
+          </a>
+          <a href="#" className="link-hover font-light">
+            Events
+          </a>
+          <a href="#" className="link-hover font-light">
+            Request Demo
+          </a>
         </nav>
       </div>
 
       <hr className="border-gray-700 mt-10 mb-5" />
 
-      <div className="flex items-center justify-between flex-wrap gap-5">
+      <div className="flex flex-wrap items-center justify-between gap-5">
         <p>uteach @ 2023. All rights reserved.</p>
-        <ul className="flex justify-between gap-5 py-3">
-          <li>Terms</li>
-          <li>Privacy</li>
-          <li>Contact</li>
+        <ul className="flex flex-wrap items-center justify-between gap-5 py-3">
+          <li>
+            <a href="#" className="link-hover">
+              Terms
+            </a>
+          </li>
+          <li>
+            <a href="#" className="link-hover">
+              Privacy
+            </a>
+          </li>
+          <li>
+            <a href="#" className="link-hover">
+              Contact
+            </a>
+          </li>
           <li className="flex items-center gap-1">
             <img src="src/assets/icons/global.svg" alt="Global" />
             EN
