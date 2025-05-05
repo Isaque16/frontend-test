@@ -4,7 +4,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="navbar shadow-sm py-5 px-4 md:px-20">
+    <nav className="navbar py-5 px-4 md:px-20">
       <div className="navbar-start gap-10">
         <div className="flex gap-1">
           <img src="/logo.svg" alt="Teach logo" />
@@ -49,10 +49,7 @@ export default function Navbar() {
         <a href="#" className="btn btn-ghost font-semibold">
           Log In
         </a>
-        <a
-          href="#"
-          className="btn btn-ghost font-semibold py-3 px-6 border-2 border-black"
-        >
+        <a href="#" className="btn btn-outline font-semibold py-3 px-6">
           Sign Up Now
         </a>
       </div>
@@ -63,17 +60,29 @@ export default function Navbar() {
           className="btn btn-square btn-ghost"
         >
           <svg
-            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="25"
+            viewBox="0 0 24 25"
             fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            className="h-6 w-6"
+            xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M4 6h16M4 12h16M4 18h16"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M3 8C3 7.58579 3.33579 7.25 3.75 7.25H20.25C20.6642 7.25 21 7.58579 21 8C21 8.41421 20.6642 8.75 20.25 8.75H3.75C3.33579 8.75 3 8.41421 3 8Z"
+              fill="#0F172A"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M3 12.5C3 12.0858 3.33579 11.75 3.75 11.75H20.25C20.6642 11.75 21 12.0858 21 12.5C21 12.9142 20.6642 13.25 20.25 13.25H3.75C3.33579 13.25 3 12.9142 3 12.5Z"
+              fill="#0F172A"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M3 17C3 16.5858 3.33579 16.25 3.75 16.25H20.25C20.6642 16.25 21 16.5858 21 17C21 17.4142 20.6642 17.75 20.25 17.75H3.75C3.33579 17.75 3 17.4142 3 17Z"
+              fill="#0F172A"
             />
           </svg>
         </button>
@@ -81,7 +90,7 @@ export default function Navbar() {
 
       {isOpen && (
         <div className="absolute top-20 left-0 right-0 bg-white shadow-md p-5 z-50 lg:hidden">
-          <ul className="menu w-full">
+          <ul className="menu w-full text-lg">
             <li>
               <a href="#" className="hover-underline">
                 Products
@@ -110,13 +119,13 @@ export default function Navbar() {
                 </ul>
               </details>
             </li>
-            <div className="flex flex-col gap-3 mt-4">
-              <a href="#" className="btn btn-ghost font-semibold">
+            <div className="mt-4 flex flex-col gap-3">
+              <a href="#" className="btn btn-ghost font-semibold text-lg">
                 Log In
               </a>
               <a
                 href="#"
-                className="btn btn-ghost font-semibold py-3 px-6 border-2 border-black"
+                className="btn btn-outline py-3 px-6 font-semibold border-2 border-black text-lg"
               >
                 Sign Up Now
               </a>
