@@ -9,18 +9,19 @@ import JoinCta from "./sections/JoinCta.tsx";
 import RequestCta from "./sections/RequestCta.tsx";
 
 export default function App() {
-    return (
-        <>
-            <Hero />
-            <About />
-            <TestimonialsSlide />
-            <Explore />
-            <Statics />
-            <TestimonialsCards />
-            <Features />
-            <JoinCta />
-            <RequestCta />
-        </>
-
-    )
+  return (
+    <>
+      <Hero />
+      <main>
+        <About />
+        <TestimonialsSlide />
+        <Explore />
+        <Statics />
+        <TestimonialsCards />
+        <Features />
+        <JoinCta />
+        <RequestCta />
+      </main>
+    </>
+  );
 }

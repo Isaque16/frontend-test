@@ -16,7 +16,20 @@
   --color-dark-blue: #0f172a;
 }
 
+@layer base {
+  header,
+  section {
+    @apply px-4 py-12 lg:p-20;
+  }
+}
+
 @utility btn-ghost {
+  &:hover {
+    @apply bg-orange-strong;
+  }
+}
+
+@utility btn-outline {
   &:hover {
     @apply bg-orange-strong;
   }
