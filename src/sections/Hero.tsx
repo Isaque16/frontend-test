@@ -12,15 +12,15 @@ import cubeIcon from "../assets/icons/cube.svg";
 import terminalIcon from "../assets/icons/terminal.svg";
 
 export default function Hero() {
-  const partnerCompanies = [
-    { icon: icon1, name: "Partner 1" },
-    { icon: icon2, name: "Partner 2" },
-    { icon: icon3, name: "Partner 3" },
-    { icon: icon4, name: "Partner 4" },
-    { icon: icon5, name: "Partner 5" },
-  ];
-
   function HeroContent() {
+    const partnerCompanies = [
+      { icon: icon1, name: "Partner 1" },
+      { icon: icon2, name: "Partner 2" },
+      { icon: icon3, name: "Partner 3" },
+      { icon: icon4, name: "Partner 4" },
+      { icon: icon5, name: "Partner 5" },
+    ];
+
     return (
       <div className="w-full lg:w-[575px] flex flex-col">
         <h1 className="font-title text-4xl lg:text-7xl z-1">
@@ -84,6 +84,9 @@ export default function Hero() {
             src={teacherImg}
             alt="Teacher teaching throu the computer"
             className="w-44 lg:w-64"
+            width="176"
+            height="256"
+            loading="lazy"
           />
         </figure>
         <div className="absolute flex flex-col gap-4 -top-3 lg:-top-25 left-18 lg:left-40 z-20">
@@ -109,6 +112,9 @@ export default function Hero() {
             src={studentImg}
             alt="Student lookin at the phone"
             className="w-44 lg:w-64"
+            width="176"
+            height="256"
+            loading="lazy"
           />
         </figure>
         <div className="w-full absolute -bottom-5 lg:-bottom-5 right-25 lg:right-35 z-0">
@@ -116,17 +122,29 @@ export default function Hero() {
             <img
               src={cloudIcon}
               alt=""
+              aria-hidden="true"
               className="w-[50px] lg:w-[60px] absolute bottom-15 -right-5"
+              width="50"
+              height="50"
+              loading="lazy"
             />
             <img
               src={cubeIcon}
               alt=""
+              aria-hidden="true"
               className="w-[60px] lg:w-[70px] absolute bottom-8 right-10 lg:right-16"
+              width="60"
+              height="60"
+              loading="lazy"
             />
             <img
               src={terminalIcon}
               alt=""
+              aria-hidden="true"
               className="w-[40px] lg:w-[50px] absolute bottom-0 -right-1"
+              width="40"
+              height="40"
+              loading="lazy"
             />
           </div>
         </div>

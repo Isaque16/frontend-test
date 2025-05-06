@@ -20,8 +20,11 @@ const TestimonialCard = memo(
         <footer className="flex items-center justify-start gap-4 w-full">
           <img
             src={avatar}
-            alt="Avatar"
+            alt={`Picture of ${name}`}
             className="h-16 w-16 rounded-full object-cover"
+            width="64"
+            height="64"
+            loading="lazy"
           />
           <div className="flex flex-col">
             <p className="text-sm">{name}</p>
@@ -155,7 +158,7 @@ export default function TestimonialsCards() {
         className="overflow-x-scroll lg:overflow-x-hidden h-[330px]"
         aria-live="polite"
         role="region"
-        aria-roledescription="carosell"
+        aria-roledescription="carousel"
       >
         <div
           className="flex transition-transform duration-300 ease-in-out"

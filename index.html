@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Meta tags for SEO -->
@@ -17,6 +17,7 @@
     />
     <meta name="author" content="Teach Platform" />
     <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#ea580c" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -50,6 +51,44 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Structured Data / JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://teach.com/#website",
+            "url": "https://teach.com/",
+            "name": "Teach - Teach students worldwide",
+            "description": "Online education platform connecting teachers and students from around the world.",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://teach.com/search?q={search_term_string}",
+              "query-input": "required name=search_term_string"
+            }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://teach.com/#organization",
+            "name": "Teach Platform",
+            "url": "https://teach.com/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://teach.com/logo.svg"
+            }
+          },
+          {
+            "@type": "EducationalOrganization",
+            "@id": "https://teach.com/#educational",
+            "name": "Teach Platform",
+            "description": "Connect with students globally and share your knowledge through our educational platform.",
+            "url": "https://teach.com/"
+          }
+        ]
+      }
+    </script>
   </head>
   <body class="bg-white font-body text-black">
     <div id="root" class="overflow-x-hidden"></div>

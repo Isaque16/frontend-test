@@ -52,11 +52,18 @@ export default function RequestCta() {
   };
 
   return (
-    <section className="flex flex-col justify-center items-center bg-orange-strong text-white">
+    <section
+      id="request-cta-section"
+      className="flex flex-col justify-center items-center bg-orange-strong text-white"
+      aria-labelledby="request-cta-heading"
+    >
       <div className="flex flex-col gap-8 text-center">
-        <h1 className="font-title text-3xl lg:text-5xl">
+        <h2
+          id="request-cta-heading"
+          className="font-title text-3xl lg:text-5xl"
+        >
           Ready for your next project?
-        </h1>
+        </h2>
         <p className="font-light text-xl lg:text-3xl">
           Sit elit feugiat turpis sed integer integer accumsan turpis.
         </p>
@@ -66,7 +73,7 @@ export default function RequestCta() {
         onSubmit={handleSubmit}
         noValidate
       >
-        <div className="flex flex-col">
+        <fieldset className="flex flex-col">
           <label className="text-white text-lg my-4" htmlFor="email">
             Email
           </label>
@@ -107,8 +114,8 @@ export default function RequestCta() {
               {errors.email}
             </div>
           )}
-        </div>
-        <div className="flex flex-col">
+        </fieldset>
+        <fieldset className="flex flex-col">
           <label className="text-white text-lg my-4" htmlFor="message">
             Message
           </label>
@@ -148,10 +155,10 @@ export default function RequestCta() {
               {errors.message}
             </div>
           )}
-        </div>
+        </fieldset>
 
         {submitSuccess && (
-          <div className="toast toast-top toast-end">
+          <div role="alert" className="toast toast-top toast-end">
             <div role="status" className="alert alert-success">
               <span>
                 Your request has been successfully submitted! We will contact

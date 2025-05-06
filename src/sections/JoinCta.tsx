@@ -270,9 +270,12 @@ export default function JoinCta() {
   function CtaContent() {
     return (
       <div className="w-full lg:w-[667px] my-10 lg:mx-10 flex flex-col justify-center items-center gap-10">
-        <h1 className="font-title text-2xl lg:text-5xl text-nowrap">
+        <h2
+          id="join-heading"
+          className="font-title text-2xl lg:text-5xl text-nowrap"
+        >
           Join a world of learning
-        </h1>
+        </h2>
         <p className="font-text text-lg text-center">
           Malesuada ut aliquam at ac est nisi, interdum etiam dignissim. Risus
           elit et fringilla habitant ut facilisi.

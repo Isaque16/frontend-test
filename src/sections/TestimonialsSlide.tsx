@@ -104,10 +104,10 @@ export default function TestimonialsSlide() {
           }}
         >
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="w-full flex-shrink-0 px-4 lg:px-8">
-              <p className="w-[361px] lg:w-[528px] font-text lg:text-2xl">
+            <article key={index} className="w-full flex-shrink-0 px-4 lg:px-8">
+              <blockquote className="w-[361px] lg:w-[528px] font-text lg:text-2xl">
                 {testimonial.text}
-              </p>
+              </blockquote>
               <div className="mt-5 mb-10 flex flex-col">
                 <span>{testimonial.name},</span>
                 <span className="font-bold">{testimonial.company}</span>
@@ -126,7 +126,7 @@ export default function TestimonialsSlide() {
                   />
                 ))}
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>
@@ -155,16 +155,16 @@ export default function TestimonialsSlide() {
           >
             {testimonials.map((testimonial, index) => (
               <div key={index} className="w-full h-full px-1 flex-shrink-0">
-                <div className="w-[301px] lg:w-[510px] h-full overflow-hidden rounded-xl">
+                <figure className="w-[301px] lg:w-[510px] h-full overflow-hidden rounded-xl">
                   <img
                     src={testimonial.image}
                     alt={`Image of ${testimonial.name} from ${testimonial.company}`}
                     width={528}
                     height={415}
-                    loading={index === 0 ? "eager" : "lazy"}
+                    loading="lazy"
                     className="w-full h-full object-cover"
                   />
-                </div>
+                </figure>
               </div>
             ))}
           </div>
@@ -186,7 +186,7 @@ export default function TestimonialsSlide() {
     );
   }
 
-  function TestimonialsControls() {
+  function SlideControls() {
     return (
       <div className="hidden lg:flex justify-between w-full absolute left-0 top-1/2 px-4 lg:px-12 transform -translate-y-1/2">
         <button
@@ -249,7 +249,7 @@ export default function TestimonialsSlide() {
 
       <TestimonialsText />
       <TestimonialsImage />
-      <TestimonialsControls />
+      <SlideControls />
     </section>
   );
 }
