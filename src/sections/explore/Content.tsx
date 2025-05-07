@@ -10,6 +10,7 @@ export default function ExploreContent() {
           international
           <span className="absolute -top-5 right-4 md:-top-15 pointer-events-none">
             <img
+              role="presentation"
               src={planeIcon}
               alt=""
               aria-hidden="true"

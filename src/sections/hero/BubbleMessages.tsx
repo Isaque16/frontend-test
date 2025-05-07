@@ -18,7 +18,7 @@ export default function MessagesBubble() {
       {
         autoAlpha: 0,
         y: 10,
-      },
+      }
     );
 
     const tl = gsap.timeline({ repeat: -1, repeatDelay: 1 });
@@ -35,7 +35,7 @@ export default function MessagesBubble() {
           message4Ref.current,
         ],
         { autoAlpha: 0, y: -5, duration: 0.5, stagger: 0.2 },
-        "+=1.5",
+        "+=1.5"
       );
 
     return () => {

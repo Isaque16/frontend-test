@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useState } from "react";
 
-import testimonial1Image from "../../assets/images/testimonials-slide/girl.png";
-import testimonial2Image from "../../assets/images/explore/studying.jpg";
-import testimonial3Image from "../../assets/images/explore/studying3.jpg";
-import balloonElement from "../../assets/elements/quote.png";
-import cubesElement from "../../assets/elements/squares.png";
+import testimonial1Image from "../../assets/images/testimonials-slide/girl.webp";
+import testimonial2Image from "../../assets/images/explore/studying.webp";
+import testimonial3Image from "../../assets/images/explore/studying3.webp";
+import balloonElement from "../../assets/elements/quote.webp";
+import cubesElement from "../../assets/elements/squares.webp";
 
 export default function TestimonialsSlide() {
   const testimonials = [
@@ -192,6 +192,7 @@ export default function TestimonialsSlide() {
 
       <div className="relative w-full h-[375px] lg:w-1/2">
         <img
+          role="presentation"
           src={balloonElement}
           alt=""
           width={45}
@@ -225,6 +226,7 @@ export default function TestimonialsSlide() {
           </div>
         </div>
         <div
+          role="presentation"
           className={`absolute -bottom-10 lg:-bottom-40 right-8 lg:right-28 w-[325px] lg:w-[455px] h-[375px] lg:h-[573px] rounded-[50px] transform ${
             isTransitioning
               ? "transition-transform duration-500 -rotate-[40deg]"
@@ -233,6 +235,7 @@ export default function TestimonialsSlide() {
           aria-hidden="true"
         ></div>
         <img
+          role="presentation"
           src={cubesElement}
           alt=""
           aria-hidden="true"

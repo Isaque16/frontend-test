@@ -1,13 +1,13 @@
-import studying2 from "../../assets/images/explore/studying2.jpg";
-import group from "../../assets/images/explore/group.jpg";
-import studying3 from "../../assets/images/explore/studying3.jpg";
-import music from "../../assets/images/explore/music.jpg";
-import studying5 from "../../assets/images/explore/studying5.jpg";
-import graduated from "../../assets/images/explore/graduated.jpg";
-import studying4 from "../../assets/images/explore/studying4.jpg";
-import studying from "../../assets/images/explore/studying.jpg";
-import collegeWoman from "../../assets/images/explore/college-woman.jpg";
-import student from "../../assets/images/explore/student.jpg";
+import studying2 from "../../assets/images/explore/studying2.webp";
+import group from "../../assets/images/explore/group.webp";
+import studying3 from "../../assets/images/explore/studying3.webp";
+import music from "../../assets/images/explore/music.webp";
+import studying5 from "../../assets/images/explore/studying5.webp";
+import graduated from "../../assets/images/explore/graduated.webp";
+import studying4 from "../../assets/images/explore/studying4.webp";
+import studying from "../../assets/images/explore/studying.webp";
+import collegeWoman from "../../assets/images/explore/college-woman.webp";
+import student from "../../assets/images/explore/student.webp";
 import ExploreImage from "./Image.tsx";
 
 export default function ExploreImages() {

@@ -1,5 +1,5 @@
-import blob from "../../assets/elements/blob_2.png";
-import aboutWindow from "../../assets/images/about/img.png";
+import blob from "../../assets/elements/blob_2.webp";
+import aboutWindow from "../../assets/images/about/window.webp";
 import PlanCard from "../../components/PlanCard.tsx";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";

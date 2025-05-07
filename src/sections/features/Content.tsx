@@ -9,6 +9,7 @@ export default function FeaturesContent() {
         <span className="relative inline-block">
           <span className="absolute -bottom-0 lg:-bottom-2 -right-0 pointer-events-none -z-1">
             <img
+              role="presentation"
               src={scratchSvg}
               alt=""
               aria-hidden="true"

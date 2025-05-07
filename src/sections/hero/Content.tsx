@@ -20,7 +20,16 @@ export default function HeroContent() {
       <h1 className="font-title text-4xl lg:text-7xl z-1">
         <span className="relative inline-block">
           <span className="absolute bottom-0 lg:-bottom-1 -right-0 pointer-events-none -z-1">
-            <img src={scratchIcon} alt="" className="w-[100px] lg:w-[300px]" />
+            <img
+              role="presentation"
+              src={scratchIcon}
+              alt=""
+              className="w-[100px] lg:w-[300px]"
+              aria-hidden="true"
+              width={100}
+              height={100}
+              loading="lazy"
+            />
           </span>{" "}
           Teach
         </span>{" "}
@@ -34,7 +43,7 @@ export default function HeroContent() {
       <div className="flex gap-8">
         <a
           href="/signup"
-          className="py-3 px-8 rounded-lg bg-orange-strong hover:bg-orange-700 text-white text-xl font-text lg:font-semibold transition-colors duration-300"
+          className="py-3 px-8 rounded-lg bg-orange-strong hover:bg-orange-700 focus:bg-orange-700 text-white text-xl font-text lg:font-semibold transition-colors duration-300"
         >
           Sign Up Now
         </a>
@@ -42,7 +51,15 @@ export default function HeroContent() {
           href="/demo"
           className="inline-flex gap-4 items-center link-hover text-lg font-semibold text-sky-600 hover:text-sky-700"
         >
-          <img src={playIcon} alt="" /> View Demo
+          <img
+            src={playIcon}
+            alt=""
+            aria-hidden="true"
+            width={20}
+            height={20}
+            loading="lazy"
+          />{" "}
+          View Demo
         </a>
       </div>
       <div className="my-6 lg:my-10 lg:mt-18 flex flex-col lg:flex-row gap-4 lg:gap-10">
@@ -53,7 +70,13 @@ export default function HeroContent() {
         </p>
         <div className="flex gap-6">
           {partnerCompanies.map((company, index) => (
-            <img key={index} src={company.icon} alt={company.name} width={25} />
+            <img
+              key={index}
+              src={company.icon}
+              alt={company.name}
+              width={25}
+              height={25}
+            />
           ))}
         </div>
       </div>

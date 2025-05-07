@@ -1,9 +1,9 @@
-import blobImg from "../../assets/elements/blob_1.png";
+import blobImg from "../../assets/elements/blob_1.webp";
 import PlanCard from "../../components/PlanCard.tsx";
-import studyingImg from "../../assets/images/features/studying.jpg";
-import womanImg from "../../assets/images/features/woman.jpg";
-import coupleImg from "../../assets/images/features/couple.jpg";
-import sofaImg from "../../assets/images/features/sofa.jpg";
+import studyingImg from "../../assets/images/features/studying.webp";
+import womanImg from "../../assets/images/features/woman.webp";
+import coupleImg from "../../assets/images/features/couple.webp";
+import sofaImg from "../../assets/images/features/sofa.webp";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -69,6 +69,7 @@ export default function FeaturesImages() {
       className="relative w-full lg:w-1/2 my-20 flex flex-col justify-center items-center lg:items-start gap-5"
     >
       <img
+        role="presentation"
         ref={blobRef}
         src={blobImg}
         alt=""

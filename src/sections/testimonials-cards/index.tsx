@@ -1,7 +1,7 @@
-import woman1 from "../../assets/images/testimonials-cards/woman1.jpg";
-import businessMan from "../../assets/images/testimonials-cards/business-man.jpg";
-import womanPink from "../../assets/images/testimonials-cards/woman-pink.jpg";
-import man1 from "../../assets/images/testimonials-cards/man1.jpg";
+import woman1 from "../../assets/images/testimonials-cards/woman1.webp";
+import businessMan from "../../assets/images/testimonials-cards/business-man.webp";
+import womanPink from "../../assets/images/testimonials-cards/woman-pink.webp";
+import man1 from "../../assets/images/testimonials-cards/man1.webp";
 import { useCallback, useState } from "react";
 import TestimonialCard from "./TestimonialCard.tsx";
 
@@ -71,9 +71,11 @@ export default function TestimonialsCards() {
         </h2>
         <div className="hidden gap-4 lg:flex">
           <button
+            type="button"
             onClick={slideLeft}
             className="p-3 border-2 border-orange-strong rounded-full cursor-pointer"
             disabled={isTransitioning}
+            aria-label="Previous testimonial"
           >
             <svg
               width="15"
@@ -96,9 +98,11 @@ export default function TestimonialsCards() {
             </svg>
           </button>
           <button
+            type="button"
             onClick={slideRight}
             className="p-3 border-2 border-orange-strong rounded-full cursor-pointer"
             disabled={isTransitioning}
+            aria-label="Next testimonial"
           >
             <svg
               width="15"
