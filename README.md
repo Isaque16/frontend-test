@@ -1,54 +1,90 @@
-# React + TypeScript + Vite
+# Frontend Technical Test Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+This is a modern React-based frontend project built with TypeScript, Vite, and TailwindCSS. The project implements a responsive and interactive user interface with smooth animations using GSAP.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
 
-## Expanding the ESLint configuration
+- **React 19**: Modern UI library for building user interfaces
+- **TypeScript**: For type-safe code
+- **Vite**: Next-generation frontend tooling
+- **TailwindCSS**: Utility-first CSS framework
+- **GSAP**: Professional-grade animation library
+- **DaisyUI**: Component library for TailwindCSS
+- **React Helmet**: For managing document head
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Project Structure
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```
+src/
+├── assets/        # Static assets like images and fonts
+├── components/    # Reusable UI components
+├── layout/        # Layout components and templates
+├── sections/      # Page sections and main content components
+├── App.tsx        # Main application component
+├── main.tsx       # Application entry point
+└── index.css      # Global styles
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Getting Started
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Prerequisites
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+- Node.js (Latest LTS version recommended)
+- npm or yarn package manager
+
+### Installation
+
+1. Clone the repository
+
+```bash
+git clone [repository-url]
 ```
+
+2. Install dependencies
+
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Start the development server
+
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+### Available Scripts
+
+- `npm run dev`: Start development server
+- `npm run build`: Build for production
+- `npm run lint`: Run ESLint
+- `npm run preview`: Preview production build
+
+## Features
+
+- Modern React with TypeScript
+- Responsive design with TailwindCSS
+- Smooth animations with GSAP
+- Component-based architecture
+- SEO optimization with React Helmet
+- ESLint for code quality
+- DaisyUI components for consistent UI
+
+## Development
+
+The project uses ESLint for code linting and follows modern React best practices. The codebase is organized into reusable components and sections for maintainability and scalability.
+
+## Building for Production
+
+To create a production build:
+
+```bash
+npm run build
+```
+
+The build output will be in the `dist` directory.
