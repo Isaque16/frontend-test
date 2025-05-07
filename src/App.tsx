@@ -1,12 +1,12 @@
-import Hero from "./sections/Hero.tsx";
-import About from "./sections/About.tsx";
-import TestimonialsSlide from "./sections/TestimonialsSlide.tsx";
-import Explore from "./sections/Explore.tsx";
-import Statics from "./sections/Statics.tsx";
-import TestimonialsCards from "./sections/TestimonialsCards.tsx";
-import Features from "./sections/Features.tsx";
-import JoinCta from "./sections/JoinCta.tsx";
-import RequestCta from "./sections/RequestCta.tsx";
+import Hero from "./sections/hero";
+import About from "./sections/about";
+import TestimonialsSlide from "./sections/testimonials-slide";
+import Explore from "./sections/explore";
+import Statics from "./sections/statics";
+import TestimonialsCards from "./sections/testimonials-cards";
+import Features from "./sections/features";
+import JoinCta from "./sections/join-cta";
+import RequestCta from "./sections/request-cta";
 
 export default function App() {
   return (

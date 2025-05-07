@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useState } from "react";
 
-import testimonial1Image from "../assets/images/testimonials-slide/girl.png";
-import testimonial2Image from "../assets/images/explore/studying.jpg";
-import testimonial3Image from "../assets/images/explore/studying3.jpg";
-import balloonElement from "../assets/elements/img_2.png";
-import cubesElement from "../assets/elements/img_3.png";
+import testimonial1Image from "../../assets/images/testimonials-slide/girl.png";
+import testimonial2Image from "../../assets/images/explore/studying.jpg";
+import testimonial3Image from "../../assets/images/explore/studying3.jpg";
+import balloonElement from "../../assets/elements/quote.png";
+import cubesElement from "../../assets/elements/squares.png";
 
 export default function TestimonialsSlide() {
   const testimonials = [
