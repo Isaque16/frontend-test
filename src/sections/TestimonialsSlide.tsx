@@ -92,100 +92,6 @@ export default function TestimonialsSlide() {
     }
   }, [autoplay]);
 
-  function TestimonialsText() {
-    return (
-      <div className="w-full lg:w-2/5 flex flex-col justify-center text-lg lg:text-2xl">
-        <div
-          aria-live="polite"
-          className="transition-transform duration-500 ease-in-out flex"
-          style={{
-            transform: `translateX(-${currentIndex * 100}%)`,
-            width: `${testimonials.length * 100}%`,
-          }}
-        >
-          {testimonials.map((testimonial, index) => (
-            <article key={index} className="w-full flex-shrink-0 px-4 lg:px-8">
-              <blockquote className="w-[361px] lg:w-[528px] font-text lg:text-2xl">
-                {testimonial.text}
-              </blockquote>
-              <div className="mt-5 mb-10 flex flex-col">
-                <span>{testimonial.name},</span>
-                <span className="font-bold">{testimonial.company}</span>
-              </div>
-              <div className="flex gap-2 items-center">
-                {testimonials.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => handleDotClick(index)}
-                    className={`w-2 h-2 rounded-full transition-colors ${
-                      currentIndex === index
-                        ? "bg-dark-blue w-8!"
-                        : "bg-white hover:bg-gray-300"
-                    }`}
-                    aria-label={`Ir para slide ${index + 1}`}
-                  />
-                ))}
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
-    );
-  }
-
-  function TestimonialsImage() {
-    return (
-      <div className="relative w-full h-[375px] lg:w-1/2">
-        <img
-          src={balloonElement}
-          alt=""
-          width={45}
-          height={45}
-          loading="lazy"
-          aria-hidden="true"
-          className="absolute -top-15 lg:-top-15 right-10 lg:right-38 z-20"
-        />
-        <div className="w-[320px] md:w-[361px] lg:w-[528px] h-[294px] lg:h-[415px] absolute p-1 bottom-5 lg:-bottom-10 left-1/2 -translate-x-1/2 lg:translate-x-0 lg:left-20 rounded-2xl bg-dark-blue z-10 overflow-hidden">
-          <div
-            className="transition-transform duration-500 ease-in-out flex h-full"
-            style={{
-              transform: `translateX(-${currentIndex * 100}%)`,
-              width: `${testimonials.length * 100}%`,
-            }}
-          >
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="w-full h-full px-1 flex-shrink-0">
-                <figure className="w-[301px] lg:w-[510px] h-full overflow-hidden rounded-xl">
-                  <img
-                    src={testimonial.image}
-                    alt={`Image of ${testimonial.name} from ${testimonial.company}`}
-                    width={528}
-                    height={415}
-                    loading="lazy"
-                    className="w-full h-full object-cover"
-                  />
-                </figure>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div
-          className="absolute -bottom-10 lg:-bottom-40 right-8 lg:right-28 w-[325px] lg:w-[455px] h-[375px] lg:h-[573px] rounded-[50px] transform -rotate-30 bg-dark-blue z-0"
-          aria-hidden="true"
-        ></div>
-        <img
-          src={cubesElement}
-          alt=""
-          aria-hidden="true"
-          width={155}
-          height={155}
-          loading="lazy"
-          className="absolute -bottom-20 left-15 lg:left-28 z-10"
-        />
-      </div>
-    );
-  }
-
   function SlideControls() {
     return (
       <div className="hidden lg:flex justify-between w-full absolute left-0 top-1/2 px-4 lg:px-12 transform -translate-y-1/2">
@@ -247,8 +153,95 @@ export default function TestimonialsSlide() {
         Depoimentos de usuários
       </h2>
 
-      <TestimonialsText />
-      <TestimonialsImage />
+      <div className="w-full lg:w-2/5 flex flex-col justify-center text-lg lg:text-2xl">
+        <div
+          aria-live="polite"
+          className="transition-transform duration-500 ease-in-out flex"
+          style={{
+            transform: `translateX(-${currentIndex * 100}%)`,
+            width: `${testimonials.length * 100}%`,
+          }}
+        >
+          {testimonials.map((testimonial, index) => (
+            <article key={index} className="w-full flex-shrink-0 px-4 lg:px-8">
+              <blockquote className="w-[361px] lg:w-[528px] font-text lg:text-2xl">
+                {testimonial.text}
+              </blockquote>
+              <div className="mt-5 mb-10 flex flex-col">
+                <span>{testimonial.name},</span>
+                <span className="font-bold">{testimonial.company}</span>
+              </div>
+              <div className="flex gap-2 items-center">
+                {testimonials.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => handleDotClick(index)}
+                    className={`w-2 h-2 rounded-full transition-colors ${
+                      currentIndex === index
+                        ? "bg-dark-blue !w-8"
+                        : "bg-white hover:bg-gray-300"
+                    }`}
+                    aria-label={`Ir para slide ${index + 1}`}
+                  />
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+
+      <div className="relative w-full h-[375px] lg:w-1/2">
+        <img
+          src={balloonElement}
+          alt=""
+          width={45}
+          height={45}
+          loading="lazy"
+          aria-hidden="true"
+          className="absolute -top-15 lg:-top-15 right-10 lg:right-38 z-20"
+        />
+        <div className="w-[320px] md:w-[361px] lg:w-[528px] h-[294px] lg:h-[415px] absolute p-1 bottom-5 lg:-bottom-10 left-1/2 -translate-x-1/2 lg:translate-x-0 lg:left-20 rounded-2xl bg-dark-blue z-10 overflow-hidden">
+          <div
+            className="transition-transform duration-500 ease-in-out flex h-full"
+            style={{
+              transform: `translateX(-${currentIndex * 100}%)`,
+              width: `${testimonials.length * 100}%`,
+            }}
+          >
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="w-full h-full px-1 flex-shrink-0">
+                <figure className="w-[301px] lg:w-[510px] h-full overflow-hidden rounded-xl">
+                  <img
+                    src={testimonial.image}
+                    alt={`Image of ${testimonial.name} from ${testimonial.company}`}
+                    width={528}
+                    height={415}
+                    loading="lazy"
+                    className="w-full h-full object-cover"
+                  />
+                </figure>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div
+          className={`absolute -bottom-10 lg:-bottom-40 right-8 lg:right-28 w-[325px] lg:w-[455px] h-[375px] lg:h-[573px] rounded-[50px] transform ${
+            isTransitioning
+              ? "transition-transform duration-500 -rotate-[40deg]"
+              : "transition-transform duration-700 -rotate-30"
+          } bg-dark-blue z-0`}
+          aria-hidden="true"
+        ></div>
+        <img
+          src={cubesElement}
+          alt=""
+          aria-hidden="true"
+          width={155}
+          height={155}
+          loading="lazy"
+          className="absolute -bottom-20 left-15 lg:left-28 z-10"
+        />
+      </div>
       <SlideControls />
     </section>
   );

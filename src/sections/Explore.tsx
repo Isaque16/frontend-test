@@ -1,4 +1,8 @@
-import { memo } from "react";
+import { memo, useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 import studying2 from "../assets/images/explore/studying2.jpg";
 import group from "../assets/images/explore/group.jpg";
@@ -19,27 +23,68 @@ interface ExploreImageProps {
   width: number;
   height: number;
   className: string;
+  index: number;
 }
 
 const ExploreImage = memo(
-  ({ src, alt, width, height, className }: ExploreImageProps) => (
-    <figure className={`shadow-md rounded-lg overflow-hidden ${className}`}>
-      <img
-        src={src}
-        alt={alt}
-        className="w-full h-full object-cover"
-        width={width}
-        height={height}
-        loading="lazy"
-      />
-    </figure>
-  ),
+  ({ src, alt, width, height, className, index }: ExploreImageProps) => {
+    const figureRef = useRef<HTMLElement>(null);
+
+    useEffect(() => {
+      if (!figureRef.current) return;
+
+      // Configuração inicial - invisível e deslocado para cima
+      gsap.set(figureRef.current, {
+        autoAlpha: 0,
+        y: -30,
+      });
+
+      // Animação com ScrollTrigger
+      gsap.to(figureRef.current, {
+        autoAlpha: 1,
+        y: 0,
+        duration: 0.7,
+        delay: index * 0.1, // Efeito cascata baseado no índice da imagem
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: figureRef.current,
+          start: "top 90%",
+          once: true,
+        },
+      });
+
+      return () => {
+        ScrollTrigger.getAll().forEach((trigger) => {
+          if (trigger.vars.trigger === figureRef.current) {
+            trigger.kill();
+          }
+        });
+      };
+    }, [index]);
+
+    return (
+      <figure
+        ref={figureRef}
+        className={`shadow-md rounded-lg overflow-hidden ${className}`}
+      >
+        <img
+          src={src}
+          alt={alt}
+          className="w-full h-full object-cover"
+          width={width}
+          height={height}
+          loading="lazy"
+        />
+      </figure>
+    );
+  },
 );
 
 export default function Explore() {
   function ExploreImages() {
     const images = [
       {
+        index: 1,
         src: studying2,
         alt: "Student actively participating in an online class",
         width: 128,
@@ -47,6 +92,7 @@ export default function Explore() {
         className: "w-[72px] h-[96px] md:w-[128px] md:h-[192px]",
       },
       {
+        index: 2,
         src: group,
         alt: "Group of students collaborating on an international project",
         width: 172,
@@ -54,6 +100,7 @@ export default function Explore() {
         className: "w-[96px] h-[129px] md:w-[172px] md:h-[258px]",
       },
       {
+        index: 3,
         src: studying3,
         alt: "Student focused on her online studies",
         width: 128,
@@ -61,6 +108,7 @@ export default function Explore() {
         className: "w-[72px] h-[106px] md:w-[128px] md:h-[212px]",
       },
       {
+        index: 4,
         src: music,
         alt: "Teacher and student in an online music class",
         width: 128,
@@ -68,6 +116,7 @@ export default function Explore() {
         className: "w-[72px] h-[107.5px] md:w-[128px] md:h-[215px]",
       },
       {
+        index: 5,
         src: studying5,
         alt: "University student engaged in an international course",
         width: 128,
@@ -75,6 +124,7 @@ export default function Explore() {
         className: "w-[72px] h-[80px] md:w-[128px] md:h-[160px]",
       },
       {
+        index: 6,
         src: graduated,
         alt: "Graduate celebrating completion of an international course",
         width: 128,
@@ -82,6 +132,7 @@ export default function Explore() {
         className: "w-[72px] h-[85.5px] md:w-[128px] md:h-[171px]",
       },
       {
+        index: 7,
         src: studying4,
         alt: "Student participating in a virtual educational exchange",
         width: 128,
@@ -89,6 +140,7 @@ export default function Explore() {
         className: "w-[72px] h-[86px] md:w-[128px] md:h-[172px]",
       },
       {
+        index: 8,
         src: studying,
         alt: "Student in a video call with an international teacher",
         width: 128,
@@ -96,6 +148,7 @@ export default function Explore() {
         className: "w-[72px] h-[96px] md:w-[128px] md:h-[192px]",
       },
       {
+        index: 9,
         src: collegeWoman,
         alt: "University student prepared for international classes",
         width: 160,
@@ -103,6 +156,7 @@ export default function Explore() {
         className: "w-[88px] h-[127.5px] md:w-[160px] md:h-[255px]",
       },
       {
+        index: 10,
         src: student,
         alt: "Student reflecting on global educational opportunities",
         width: 128,

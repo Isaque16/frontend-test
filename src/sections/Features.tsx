@@ -6,6 +6,11 @@ import coupleImg from "../assets/images/features/couple.jpg";
 import sofaImg from "../assets/images/features/sofa.jpg";
 import LinkArrow from "../components/LinkArrow.tsx";
 import PlanCard from "../components/PlanCard.tsx";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Features() {
   function FeaturesContent() {
@@ -43,9 +48,70 @@ export default function Features() {
   }
 
   function FeaturesImages() {
+    const containerRef = useRef(null);
+    const blobRef = useRef(null);
+    const topGroupRef = useRef(null);
+    const planCardRef = useRef(null);
+    const figureTopRef = useRef(null);
+    const bottomGroupRef = useRef(null);
+    const figureLeftRef = useRef(null);
+    const figureRightRef = useRef(null);
+
+    useEffect(() => {
+      gsap.set(blobRef.current, {
+        autoAlpha: 0,
+        scale: 0.9,
+      });
+
+      gsap.set([planCardRef.current, figureTopRef.current], {
+        autoAlpha: 0,
+        y: 20,
+      });
+
+      gsap.set([figureLeftRef.current, figureRightRef.current], {
+        autoAlpha: 0,
+        y: 20,
+      });
+
+      const tl = gsap.timeline({
+        defaults: { ease: "power3.out" },
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 75%",
+          once: true,
+        },
+      });
+
+      tl.to(blobRef.current, { autoAlpha: 1, scale: 1, duration: 0.8 })
+        .to(planCardRef.current, { autoAlpha: 1, y: 0, duration: 0.6 }, "-=0.4")
+        .to(
+          figureTopRef.current,
+          { autoAlpha: 1, y: 0, duration: 0.6 },
+          "-=0.3",
+        )
+        .to(
+          figureLeftRef.current,
+          { autoAlpha: 1, y: 0, duration: 0.6 },
+          "-=0.2",
+        )
+        .to(
+          figureRightRef.current,
+          { autoAlpha: 1, y: 0, duration: 0.6 },
+          "-=0.3",
+        );
+
+      return () => {
+        tl.kill();
+      };
+    }, []);
+
     return (
-      <div className="relative w-full lg:w-1/2 my-20 flex flex-col justify-center items-center lg:items-start gap-5">
+      <div
+        ref={containerRef}
+        className="relative w-full lg:w-1/2 my-20 flex flex-col justify-center items-center lg:items-start gap-5"
+      >
         <img
+          ref={blobRef}
           src={blobImg}
           alt=""
           width={534}
@@ -54,15 +120,20 @@ export default function Features() {
           aria-hidden="true"
           className="absolute w-full lg:w-[534px] h-[522px] lg:h-[622px] lg:right-55 lg:-top-20"
         />
-        <div className="ml-30 lg:ml-0 flex gap-5 items-end z-50">
-          <PlanCard
-            width="w-80 lg:w-2/5"
-            plan="Popular"
-            name="Design for how <br /> people think"
-            text="Aliquam ut euismod condimentum elementum ultricies volutpat sit non."
-            link="/courses/design-thinking"
-          />
-          <div className="w-1/2 relative">
+        <div
+          ref={topGroupRef}
+          className="ml-30 lg:ml-0 flex gap-5 items-end z-50"
+        >
+          <div ref={planCardRef} className="w-80 lg:w-2/5">
+            <PlanCard
+              width="w-full"
+              plan="Popular"
+              name="Design for how <br /> people think"
+              text="Aliquam ut euismod condimentum elementum ultricies volutpat sit non."
+              link="/courses/design-thinking"
+            />
+          </div>
+          <div ref={figureTopRef} className="w-1/2 relative">
             <figure className="w-[186px] h-[158px] p-2 bg-white rounded-lg overflow-hidden shadow-md">
               <img
                 src={studyingImg}
@@ -85,8 +156,11 @@ export default function Features() {
             </figure>
           </div>
         </div>
-        <div className="flex gap-5 z-50">
-          <figure className="w-[304px] h-[179px] p-2 ml-40 lg:ml-0 bg-white rounded-lg overflow-hidden shadow-md">
+        <div ref={bottomGroupRef} className="flex gap-5 z-50">
+          <figure
+            ref={figureLeftRef}
+            className="w-[304px] h-[179px] p-2 ml-40 lg:ml-0 bg-white rounded-lg overflow-hidden shadow-md"
+          >
             <img
               src={coupleImg}
               alt="Couple of students collaborating on an educational project"
@@ -96,7 +170,10 @@ export default function Features() {
               className="w-full h-full object-cover rounded-lg"
             />
           </figure>
-          <figure className="w-[232px] h-[179px] p-2 bg-white rounded-lg overflow-hidden shadow-md">
+          <figure
+            ref={figureRightRef}
+            className="w-[232px] h-[179px] p-2 bg-white rounded-lg overflow-hidden shadow-md"
+          >
             <img
               src={sofaImg}
               alt="Relaxed student accessing platform from home"
